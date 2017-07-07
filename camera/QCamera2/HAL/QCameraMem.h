@@ -40,9 +40,6 @@ extern "C" {
 #include <mm_camera_interface.h>
 }
 
-//OFFSET, SIZE, USAGE, TIMESTAMP, FORMAT		
-#define VIDEO_METADATA_NUM_INTS 5
-
 namespace qcamera {
 
 class QCameraMemoryPool;
@@ -188,15 +185,11 @@ public:
     virtual void deallocate();
     virtual camera_memory_t *getMemory(int index, bool metadata) const;
     virtual int getMatchBufIndex(const void *opaque, bool metadata) const;
-    native_handle_t *updateNativeHandle(uint32_t index, bool metadata = true);		
-    int closeNativeHandle(const void *data, bool metadata);		
-    static int closeNativeHandle(const void *data);
 
 private:
     camera_memory_t *mMetadata[MM_CAMERA_MAX_NUM_FRAMES];
-    uint8_t mMetaBufCount;		
-    native_handle_t *mNativeHandle[MM_CAMERA_MAX_NUM_FRAMES];
 };
+;
 
 // Gralloc Memory is acquired from preview window
 class QCameraGrallocMemory : public QCameraMemory {
