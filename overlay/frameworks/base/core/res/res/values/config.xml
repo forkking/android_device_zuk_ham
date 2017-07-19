@@ -44,7 +44,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">65</integer>
+    <!-- integer name="config_deviceHardwareWakeKeys">65</integer -->
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
@@ -290,7 +290,7 @@
     <bool name="config_enableMultiUserUI">true</bool>
 
     <!-- Whether device supports double tap to wake -->
-    <bool name="config_supportDoubleTapWake">true</bool>
+    <!-- bool name="config_supportDoubleTapWake">true</bool -->
 
     <!-- Mobile data tcp buffer sizes -->
     <string-array name="config_mobile_tcp_buffers">
@@ -315,5 +315,5 @@
     <bool name="config_enableAutoPowerModes">true</bool>
 
     <!-- Enable blur support --> 
-    <bool name="config_uiBlurEnabled">true</bool>
+    <!-- bool name="config_uiBlurEnabled">true</bool -->
 </resources>

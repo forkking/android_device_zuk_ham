@@ -13,15 +13,16 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from ham device
 $(call inherit-product, device/zuk/ham/ham.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := cm_ham
+include device/qcom/common/common.mk
+
+PRODUCT_NAME := pa_ham
 PRODUCT_DEVICE := ham
 PRODUCT_MANUFACTURER := ZUK
 PRODUCT_MODEL := ZUK Z1
@@ -37,3 +38,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=Z1 PRODUCT_NAME=ham
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="ZUK/ham/Z1:5.1.1/LMY49J/YOG4PAS9IG:user/release-keys" \
     PRIVATE_BUILD_DESC="ham-user 5.1.1 LMY49J YOG4PAS9IG release-keys"
+
+# Paranoid Android platform
+include vendor/pa/main.mk
+

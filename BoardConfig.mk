@@ -53,7 +53,6 @@ TARGET_KERNEL_ARCH                 := arm
 BOARD_KERNEL_CMDLINE               := console=tty60,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 vmalloc=480M androidboot.selinux=permissive
 TARGET_KERNEL_SOURCE               := kernel/cyanogen/msm8974
 TARGET_KERNEL_CONFIG               := radioactive_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Fixes Wifi-Mobile Data toggle issue
 MALLOC_SVELTE := true
@@ -79,9 +78,6 @@ BOARD_HAVE_BLUETOOTH_QCOM                   := true
 QCOM_BT_USE_SMD_TTY                         := true
 BLUETOOTH_HCI_USE_MCT                       := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-
-# Boot animation
-TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
 # Camera
 TARGET_USE_VENDOR_CAMERA_EXT    := true
@@ -153,13 +149,10 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # QCOM/CM HARDWARE
 BOARD_USES_QCOM_HARDWARE     := true
-BOARD_USES_CYANOGEN_HARDWARE := true
+#BOARD_USES_CYANOGEN_HARDWARE := true
 
 # QCOM Power HAL
 TARGET_POWERHAL_VARIANT := qcom
-
-# Radio
-TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
@@ -185,7 +178,6 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 TARGET_USES_WCNSS_CTRL           := true
-TARGET_USES_QCOM_WCNSS_QMI       := true
 TARGET_USES_WCNSS_MAC_ADDR_REV   := true
 
 # Wifi - EAP-SIM
@@ -198,7 +190,7 @@ ifneq ($(QCPATH),)
 endif
 
 # SELinux policies
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
 # QCOM sepolicy
 BOARD_SEPOLICY_DIRS += \
