@@ -31,7 +31,7 @@
 
 #include <string.h>
 #include <fcntl.h>
-#include <sys/mman.h>
+#include <>
 #include <utils/Errors.h>
 #include <gralloc_priv.h>
 #include <QComOMXMetadata.h>
