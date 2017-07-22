@@ -68,6 +68,7 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL            := true
 AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE  := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY          := true
+USE_CUSTOM_AUDIO_POLICY                    := 0
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -79,9 +80,11 @@ QCOM_BT_USE_SMD_TTY                         := true
 BLUETOOTH_HCI_USE_MCT                       := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
-# Camera
-USE_DEVICE_SPECIFIC_CAMERA      := true
-TARGET_HAS_LEGACY_CAMERA_HAL1   := true
+#Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_USE_VENDOR_CAMERA_EXT := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_USE_COMPAT_GRALLOC_ALIGN := true
 
 #Media
 TARGET_USES_MEDIA_EXTENSIONS    := true
@@ -150,10 +153,13 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # QCOM/CM HARDWARE
 BOARD_USES_QCOM_HARDWARE     := true
-#BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_USES_CYANOGEN_HARDWARE := true
 
 # QCOM Power HAL
 TARGET_POWERHAL_VARIANT := qcom
+
+# QCRIL
+TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
@@ -185,13 +191,16 @@ TARGET_USES_WCNSS_MAC_ADDR_REV   := true
 CONFIG_EAP_PROXY                 := qmi
 CONFIG_EAP_PROXY_DUAL_SIM        := true
 
+# Added to indicate that protobuf-c is supported in this build
+PROTOBUF_SUPPORTED := true
+
 # Inherit from QC proprietary
 ifneq ($(QCPATH),)
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 endif
 
 # SELinux policies
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/Android.mk
 
 # QCOM sepolicy
 BOARD_SEPOLICY_DIRS += \
