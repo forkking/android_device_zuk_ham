@@ -31,8 +31,8 @@ endif
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../stack/common \
         frameworks/native/include/media/openmax \
-        hardware/qcom/display/msm8974/libgralloc \
-        hardware/qcom/media/msm8974/libstagefrighthw \
+        hardware/qcom/display-caf-msm8974/libgralloc \
+        hardware/qcom/media-caf-msm8974/libstagefrighthw \
         $(LOCAL_PATH)/../../mm-image-codec/qexif \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
         $(LOCAL_PATH)/../util \
