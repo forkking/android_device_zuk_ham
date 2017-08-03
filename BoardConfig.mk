@@ -95,11 +95,14 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # CM Hardware
 BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
+# display
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8974
+
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
 
 # ENCRYPTION
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
@@ -185,12 +188,8 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 TARGET_USES_WCNSS_CTRL           := true
-TARGET_USES_QCOM_WCNSS_QMI       := true
+TARGET_USES_QCOM_WCNSS_QMI       := false
 TARGET_USES_WCNSS_MAC_ADDR_REV   := true
-
-# Wifi - EAP-SIM
-CONFIG_EAP_PROXY                 := qmi
-CONFIG_EAP_PROXY_DUAL_SIM        := true
 
 # Inherit from QC proprietary
 ifneq ($(QCPATH),)
