@@ -1,0 +1,62 @@
+[ 
+    {
+        "remote": "github",
+        "repository": "Omni-onyx/android_external_ffmpeg",
+        "target_path": "external/ffmpeg",
+        "revision": "cm-14.1"
+    },
+    {
+        "remote": "github",
+        "repository": "Omni-onyx/android_external_stagefright-plugins",
+        "target_path": "external/stagefright-plugins",
+        "revision": "cm-14.1"
+    },
+    {
+        "remote": "omnirom",
+        "repository": "android_external_ant-wireless_antradio-library",
+        "target_path": "external/ant-wireless/antradio-library",
+        "revision": "android-7.1"
+    },
+    {
+        "remote": "omnirom",
+        "repository": "android_external_ant-wireless_ant_service",
+        "target_path": "external/ant-wireless/ant_service",
+        "revision": "android-7.1"
+    },
+    {
+        "remote": "omnirom",
+        "repository": "android_external_ant-wireless_ant_native",
+        "target_path": "external/ant-wireless/ant_native",
+        "revision": "android-7.1"
+    },
+    {
+      "remote": "github",
+        "repository": "Omni-onyx/android_hardware_qcom_display-caf-msm8974",
+        "target_path": "hardware/qcom/display-caf-msm8974",
+        "revision": "android-7.1"
+    },
+    {
+        "remote": "github",
+        "repository": "Omni-onyx/android_hardware_qcom_media-caf-msm8974",
+        "target_path": "hardware/qcom/media-caf-msm8974",
+        "revision": "android-7.1"
+    },
+    {
+        "remote": "github",
+        "repository": "Omni-onyx/android_hardware_qcom_audio-caf-msm8974",
+        "target_path": "hardware/qcom/audio-caf-msm8974",
+        "revision": "android-7.1"
+    },
+    {
+        "remote": "github",
+        "repository": "Omni-onyx/android_device_qcom_caf-sepolicy",
+        "target_path": "device/qcom/sepolicy",
+        "revision": "android-7.1"
+    },
+    {
+        "remote": "omnirom",
+        "repository": "vendor_qcom_opensource_dataservices",
+        "target_path": "vendor/qcom/opensource/dataservices",
+        "revision": "android-7.1"
+    }
+]
